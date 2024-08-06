@@ -12,4 +12,4 @@ Requires a music XML reader. Music notation software such as Sibelius, Finale, o
 
 Download all files to same directory, open generator.py, configure file path, run generator.py, and configure input for music21 library using configure.run() command (only needs to be ran once and can be removed after setup is complete), set MuseScore or other notation software to open XML file.
 
-
+YouTube demonstration: https://youtu.be/cCH_gWLuLTE
