@@ -30,12 +30,12 @@ notes()
 
 performance = s.stop_transcribing()
 
-output_dir = r'C:\Users\sagan\Desktop\Music Py Projects\cpp\0.7\xmls'
+output_dir = r'\..\xmls'
 os.makedirs(output_dir, exist_ok=True)
 
 performance.to_score().export_music_xml(os.path.join(output_dir, 'Generated Tune.xml'))
 
-score = converter.parse(r'C:\Users\sagan\Desktop\Music Py Projects\cpp\0.7\xmls\Generated Tune.xml')
+score = converter.parse(r'\..\xmls\Generated Tune.xml')
 
 for measure in score.parts[1].getElementsByClass('Measure'):
     for element in measure:
@@ -52,6 +52,6 @@ for measure in score.parts[1].getElementsByClass('Measure'):
 score.metadata.composer = 'Generated with Tune Generator 0.1 written by Gabriel Sagan'
 
 #Must run once to use music21, remove after setup
-# configure.run()
+configure.run()
 
 score.show()
