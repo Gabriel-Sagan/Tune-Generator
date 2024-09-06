@@ -4,7 +4,7 @@ Tune Generator creates a melody and chordal accompaniment at random in a 32-bar 
 
 Uses the Python libraries SCAMP and music21. Type the following commands in the command prompt to install: 
 
-'''pip install scamp music21 pynput python-rtmidi'''
+pip install scamp music21 pynput python-rtmidi
 
 Requires a music XML reader. Music notation software such as Sibelius, Finale, or MuseScore work fine. MuseScore is free and recommended: https://musescore.org/en/download
 
