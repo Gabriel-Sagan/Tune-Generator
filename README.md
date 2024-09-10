@@ -1,4 +1,4 @@
-Tune Generator creates a melody and chordal accompaniment at random in a 32-bar form and can be used for live set performance. 
+Tune Generator creates a melody and chordal accompaniment using chord progression algorithms in a 32-bar form and can be used for live set performance. 
 
 ## Installation and Setup:
 
