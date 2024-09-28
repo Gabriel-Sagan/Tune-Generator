@@ -108,52 +108,51 @@ def mel_format():
     
     output = melody_and_duration()
     
-    #full A section
-    i = 36
-    L = sum(duration_seq[:i])
-    while L > 32:
-        i -= 1
-        L = sum(duration_seq[:i])
+    #Full A section
+    section_a_limit = 36
+    section_a_duration = sum(duration_seq[:section_a_limit])
+    while section_a_duration > 32:
+        section_a_limit -= 1
+        section_a_duration = sum(duration_seq[:section_a_limit])
           
-    SectionA = output[:i]
+    section_a = output[:section_a_limit]
     
-    #first 5 bars of A
-    f = 24
-    G = sum(duration_seq[:f])
-    while G > 20:
-        f -= 1
-        G = sum(duration_seq[:f])
+    #First 5 bars of A
+    a_first_five_limit = 24
+    a_first_five_duration = sum(duration_seq[:a_first_five_limit])
+    while a_first_five_duration > 20:
+        a_first_five_limit -= 1
+        a_first_five_duration = sum(duration_seq[:a_first_five_limit])
         
-    A_first_five = output[:f]
+    a_first_five = output[:a_first_five_limit]
     
-    #shows end of second A or start of B
-    j = 68
-    N = sum(duration_seq[:j])
-    while N > 64:
-        j -= 1
-        N = sum(duration_seq[:j])
+    #End of second A or start of B
+    section_ap_start = 68
+    section_ap_duration = sum(duration_seq[:section_ap_start])
+    while section_ap_duration > 64:
+        section_ap_start -= 1
+        section_ap_duration = sum(duration_seq[:section_ap_start])
     
-    #first 5 of second A
-    c = 56
-    D = sum(duration_seq[:c])
-    while D > 52:
-        c -= 1
-        D = sum(duration_seq[:c])
+    #First 5 of second A
+    second_a_first_five_limit = 56
+    second_a_first_five_duration = sum(duration_seq[:second_a_first_five_limit])
+    while second_a_first_five_duration > 52:
+        second_a_first_five_limit -= 1
+        second_a_first_five_duration = sum(duration_seq[:second_a_first_five_limit])
         
-    Ap_last_three = output[c:j]
+    a_second_half = output[second_a_first_five_limit:section_ap_start]
     
-    SectionAp = A_first_five + Ap_last_three
+    section_ap = a_first_five + a_second_half
     
-    #full B section    
-    q = 36
-    R = sum(duration_seq[j:q+j])
-    while R > 32:
-        q -= 1
-        R = sum(duration_seq[j:q+j])
+    #Full B section    
+    section_b_limit = 36
+    section_b_duration = sum(duration_seq[section_ap_start:section_b_limit + section_ap_start])
+    while section_b_duration > 32:
+        section_b_limit -= 1
+        section_b_duration = sum(duration_seq[section_ap_start:section_b_limit + section_ap_start])
            
-    SectionB = output[j:q+j]
+    section_b = output[section_ap_start:section_b_limit + section_ap_start]
         
-    full_mel = SectionA + SectionAp + SectionB + SectionAp
+    full_melody = section_a + section_ap + section_b + section_ap
     
-    return full_mel
-    
+    return full_melody
