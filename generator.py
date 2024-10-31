@@ -51,7 +51,7 @@ for measure in score.parts[1].getElementsByClass('Measure'):
         
 score.metadata.composer = 'Generated with Tune Generator 0.1 written by Gabriel Sagan'
 
-#Must run once to use music21, remove after setup
+# Must run once to use music21, remove after setup
 configure.run()
 
 score.show()
