@@ -108,7 +108,7 @@ def mel_format():
     
     output = melody_and_duration()
     
-    #Full A section
+    # Full A section
     section_a_limit = 36
     section_a_duration = sum(duration_seq[:section_a_limit])
     while section_a_duration > 32:
@@ -117,7 +117,7 @@ def mel_format():
           
     section_a = output[:section_a_limit]
     
-    #First 5 bars of A
+    # First 5 bars of A
     a_first_five_limit = 24
     a_first_five_duration = sum(duration_seq[:a_first_five_limit])
     while a_first_five_duration > 20:
@@ -126,14 +126,14 @@ def mel_format():
         
     a_first_five = output[:a_first_five_limit]
     
-    #End of second A or start of B
+    # End of second A or start of B
     section_ap_start = 68
     section_ap_duration = sum(duration_seq[:section_ap_start])
     while section_ap_duration > 64:
         section_ap_start -= 1
         section_ap_duration = sum(duration_seq[:section_ap_start])
     
-    #First 5 of second A
+    # First 5 of second A
     second_a_first_five_limit = 56
     second_a_first_five_duration = sum(duration_seq[:second_a_first_five_limit])
     while second_a_first_five_duration > 52:
@@ -144,7 +144,7 @@ def mel_format():
     
     section_ap = a_first_five + a_second_half
     
-    #Full B section    
+    # Full B section    
     section_b_limit = 36
     section_b_duration = sum(duration_seq[section_ap_start:section_b_limit + section_ap_start])
     while section_b_duration > 32:
